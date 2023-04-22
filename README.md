@@ -28,7 +28,7 @@ python main.py -s source -d destination
 ```
 
 ### GUI App
-**Just run app with** `python app.py`
+**Just run app using** `python app.py`
 
 
 ## Screenshot
