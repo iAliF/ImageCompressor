@@ -38,7 +38,10 @@ class MainWidget(QWidget):
         self._setup_compress_button()
 
         self.setWindowTitle("Image Compressor")
-        self.setWindowIcon(QIcon("icon.png"))
+
+        if not os.path.exists(icon_path := "icon.png"):
+            icon_path = os.path.join("gui", icon_path)
+        self.setWindowIcon(QIcon(icon_path))
 
         if os.name == 'nt':
             ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('com.github.ialif.compressor')
