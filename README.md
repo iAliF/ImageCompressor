@@ -28,4 +28,4 @@ python main.py -s source -d destination
 ```
 
 ### GUI App
-**Just run app with** `python main.py`
+**Just run app with** `python app.py`
