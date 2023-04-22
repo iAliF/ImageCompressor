@@ -1,6 +1,9 @@
+import ctypes
+import os
 from typing import Optional
 
 from PySide6.QtCore import Qt, QRect
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QWidget, QLabel, QTextEdit, QPushButton, QCheckBox, QSlider
 
 
@@ -35,6 +38,10 @@ class MainWidget(QWidget):
         self._setup_compress_button()
 
         self.setWindowTitle("Image Compressor")
+        self.setWindowIcon(QIcon("icon.png"))
+
+        if os.name == 'nt':
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('com.github.ialif.compressor')
 
     def _setup_labels(self):
         v_space = 30  # Space between label & text edit
