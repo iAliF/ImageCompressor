@@ -10,6 +10,15 @@ class App(MainWidget):
     def __init__(self) -> None:
         super().__init__()
 
+    def on_compress_btn_click(self):
+        pass
+
+    def on_src_btn_click(self):
+        pass
+
+    def on_dest_btn_click(self):
+        pass
+
 
 if __name__ == '__main__':
     q_app = QApplication()

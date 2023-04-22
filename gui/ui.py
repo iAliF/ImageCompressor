@@ -27,7 +27,7 @@ class MainWidget(QWidget):
         self._slider_quality = QSlider(Qt.Orientation.Horizontal, self)
         self._text_quality = QLabel("100%", self)
 
-        self.btn_compress = QPushButton("Compress Images", self)
+        self._btn_compress = QPushButton("Compress Images", self)
 
         self._setup_ui()
 
@@ -36,6 +36,10 @@ class MainWidget(QWidget):
         self._setup_checkbox()
         self._setup_slider()
         self._setup_compress_button()
+
+        self._btn_source_select.clicked.connect(self.on_src_btn_click)
+        self._btn_dest_select.clicked.connect(self.on_dest_btn_click)
+        self._btn_compress.clicked.connect(self.on_compress_btn_click)
 
         self.setWindowTitle("Image Compressor")
 
@@ -118,7 +122,7 @@ class MainWidget(QWidget):
         self._text_quality.setAlignment(Qt.AlignmentFlag.AlignVCenter)
 
     def _setup_compress_button(self):
-        self.btn_compress.setGeometry(
+        self._btn_compress.setGeometry(
             self.LEFT_MARGIN,
             self.HEIGHT - self.LEFT_MARGIN - 40,
             self.WIDTH - (2 * self.LEFT_MARGIN),
@@ -127,3 +131,12 @@ class MainWidget(QWidget):
 
     def _on_slider_value_changed(self, value: int):
         self._text_quality.setText(f"{value}%")
+
+    def on_compress_btn_click(self):
+        raise NotImplementedError
+
+    def on_src_btn_click(self):
+        raise NotImplementedError
+
+    def on_dest_btn_click(self):
+        raise NotImplementedError
