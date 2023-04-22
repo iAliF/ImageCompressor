@@ -29,3 +29,7 @@ python main.py -s source -d destination
 
 ### GUI App
 **Just run app with** `python app.py`
+
+
+## Screenshot
+![Screenshot](screenshot/img.png)
