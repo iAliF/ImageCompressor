@@ -1,6 +1,6 @@
 from argparse import ArgumentParser
 
-from compressor import ImageCompressor
+from lib import ImageCompressor
 
 
 def main() -> None:
