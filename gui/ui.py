@@ -107,8 +107,10 @@ class MainWidget(QWidget):
         self._slider_quality.setGeometry(self.LEFT_MARGIN, 290, 400, 40)
         self._slider_quality.setMinimum(1)
         self._slider_quality.setMaximum(100)
+        self._slider_quality.setValue(100)
+        self._slider_quality.valueChanged.connect(self._on_slider_value_changed)
 
-        self._text_quality.setGeometry(self.WIDTH - self.LEFT_MARGIN - 40, 280, 30, 40)
+        self._text_quality.setGeometry(self.WIDTH - self.LEFT_MARGIN - 50, 280, 60, 40)
         self._text_quality.setStyleSheet(f'font-size: 18px; font-weight: bold')
         self._text_quality.setAlignment(Qt.AlignmentFlag.AlignVCenter)
 
@@ -119,3 +121,6 @@ class MainWidget(QWidget):
             self.WIDTH - (2 * self.LEFT_MARGIN),
             40
         )
+
+    def _on_slider_value_changed(self, value: int):
+        self._text_quality.setText(f"{value}%")
