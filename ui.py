@@ -34,6 +34,8 @@ class MainWidget(QWidget):
         self._setup_slider()
         self._setup_compress_button()
 
+        self.setWindowTitle("Image Compressor")
+
     def _setup_labels(self):
         v_space = 30  # Space between label & text edit
         h_space = 20  # Space between text edit & button
