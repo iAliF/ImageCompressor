@@ -44,7 +44,7 @@ class MainWidget(QWidget):
         self.setWindowTitle("Image Compressor")
 
         if not os.path.exists(icon_path := "icon.png"):
-            icon_path = os.path.join("gui", icon_path)
+            icon_path = os.path.join("ui", icon_path)
         self.setWindowIcon(QIcon(icon_path))
 
         if os.name == 'nt':
