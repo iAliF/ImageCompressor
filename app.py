@@ -13,7 +13,7 @@ class App(MainWidget):
         self._src_dir = None
         self._dest_dir = None
 
-    def on_compress_btn_click(self):
+    def on_compress_btn_click(self) -> None:
         obj = ImageCompressor(
             self._src_dir, self._dest_dir,
             self._check_optimize.isChecked(),
@@ -22,12 +22,12 @@ class App(MainWidget):
         result = obj.compress_images()
         self.show_message(result)
 
-    def on_src_btn_click(self):
+    def on_src_btn_click(self) -> None:
         if (path := QFileDialog.getExistingDirectory()) is not None:
             self._src_dir = path
             self._te_source_dir.setText(path)
 
-    def on_dest_btn_click(self):
+    def on_dest_btn_click(self) -> None:
         if (path := QFileDialog.getExistingDirectory()) is not None:
             self._dest_dir = path
             self._te_dest_dir.setText(path)

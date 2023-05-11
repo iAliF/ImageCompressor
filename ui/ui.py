@@ -31,7 +31,7 @@ class MainWidget(QWidget):
 
         self._setup_ui()
 
-    def _setup_ui(self):
+    def _setup_ui(self) -> None:
         self._setup_labels()
         self._setup_checkbox()
         self._setup_slider()
@@ -50,7 +50,7 @@ class MainWidget(QWidget):
         if os.name == 'nt':
             ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('com.github.ialif.compressor')
 
-    def _setup_labels(self):
+    def _setup_labels(self) -> None:
         v_space = 30  # Space between label & text edit
         h_space = 20  # Space between text edit & button
         te_width = 400
@@ -107,10 +107,10 @@ class MainWidget(QWidget):
                     top, btn_width, height
                 )
 
-    def _setup_checkbox(self):
+    def _setup_checkbox(self) -> None:
         self._check_optimize.setGeometry(self.LEFT_MARGIN, 320, 100, 40)
 
-    def _setup_slider(self):
+    def _setup_slider(self) -> None:
         self._slider_quality.setGeometry(self.LEFT_MARGIN, 290, 400, 40)
         self._slider_quality.setMinimum(1)
         self._slider_quality.setMaximum(100)
@@ -121,7 +121,7 @@ class MainWidget(QWidget):
         self._text_quality.setStyleSheet(f'font-size: 18px; font-weight: bold')
         self._text_quality.setAlignment(Qt.AlignmentFlag.AlignVCenter)
 
-    def _setup_compress_button(self):
+    def _setup_compress_button(self) -> None:
         self._btn_compress.setGeometry(
             self.LEFT_MARGIN,
             self.HEIGHT - self.LEFT_MARGIN - 40,
@@ -129,14 +129,14 @@ class MainWidget(QWidget):
             40
         )
 
-    def _on_slider_value_changed(self, value: int):
+    def _on_slider_value_changed(self, value: int) -> None:
         self._text_quality.setText(f"{value}%")
 
-    def on_compress_btn_click(self):
+    def on_compress_btn_click(self) -> None:
         raise NotImplementedError
 
-    def on_src_btn_click(self):
+    def on_src_btn_click(self) -> None:
         raise NotImplementedError
 
-    def on_dest_btn_click(self):
+    def on_dest_btn_click(self) -> None:
         raise NotImplementedError
